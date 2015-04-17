@@ -16,7 +16,8 @@
 
 
 (ns camelsnake.core
-  (:require [clojure.string :refer [split capitalize, lower-case]]))
+  (:require [clojure.string :refer [split capitalize, lower-case]])
+  (:import (camelsnake Converter)))
 
 (defn- map-keys
   [key-fn m]
@@ -76,8 +77,7 @@
     (apply str (butlast (interleave parts (iterate str "_"))))))
 
 (defn ->kebab-case [item]
-  (let [parts (item-split item)]
-    (apply str (butlast (interleave parts (iterate str "-"))))))
+  (Converter/toKebabCase item))
 
 (defn ->kebab-case-keyword [item]
   (keyword (->kebab-case item)))
