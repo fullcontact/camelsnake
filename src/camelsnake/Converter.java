@@ -12,10 +12,10 @@ public class Converter {
     }
 
     static private Type getCharType(char ch) {
-        if (Character.isUpperCase(ch)) {
-            return Type.UPPER;
-        } else if (Character.isLowerCase(ch)) {
+        if (Character.isLowerCase(ch)) {
             return Type.LOWER;
+        } else if (Character.isUpperCase(ch)) {
+            return Type.UPPER;
         } else if (Character.isDigit(ch)) {
             return Type.DIGIT;
         } else if (ch == '_') {
@@ -47,7 +47,7 @@ public class Converter {
     static public String convert(String in, String sep,
                                   boolean capitalizeFirst,
                                   boolean capitalizeRest) {
-        StringBuffer out = new StringBuffer();
+        StringBuilder out = new StringBuilder(in.length() + 2);
         Type prevType = null;
         int prevBoundary = 0;
         for (int i = 0; i < in.length(); i++) {
