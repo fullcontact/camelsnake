@@ -39,6 +39,9 @@
 (defn ->camelCase-keys [m]
   (map-keys ->camelCase m))
 
+(defn ->snake_case-keys [m]
+  (map-keys ->snake_case m))
+
 (defn ->keyword-keys [m]
   (map-keys ->kebab-case-keyword m))
 
