@@ -8,7 +8,6 @@
   :java-source-paths ["src"]
   :dependencies [[org.clojure/clojure "1.7.0"]]
   :aot :all
-  :plugins [[lein-midje "3.1.3"]]
   :release-tasks [["vcs" "assert-committed"]
                   ["change" "version" "leiningen.release/bump-version" "release"]
                   ["vcs" "commit"]
@@ -16,5 +15,4 @@
                   ["deploy"]
                   ["change" "version" "leiningen.release/bump-version"]
                   ["vcs" "commit"]
-                  ["vcs" "push"]]
-  :profiles {:dev {:dependencies [[midje "1.7.0"]]}})
+                  ["vcs" "push"]])
