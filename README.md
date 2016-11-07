@@ -17,3 +17,9 @@ conversion methods:
 (->snake_case "adventure-time") ; returns "adventure_time"
 (->kebab-case "adventureTime") ; returns "adventure-time"
 ```
+
+
+## License
+
+Copyright (C) 2015-2016 FullContact. Distributed under the
+Eclipse Public License, the same as Clojure.
