@@ -7,6 +7,7 @@ public class Converter {
         LOWER,
         DIGIT,
         DASH,
+        DOT,
         UNDERSCORE,
         OTHER
     }
@@ -22,6 +23,8 @@ public class Converter {
             return Type.UNDERSCORE;
         } else if (ch == '-') {
             return Type.DASH;
+        } else if (ch == '.') {
+            return Type.DOT;
         } else {
             return Type.OTHER;
         }
@@ -53,7 +56,10 @@ public class Converter {
         for (int i = 0; i < in.length(); i++) {
             char ch = in.charAt(i);
             Type type = getCharType(ch);
-            if ((type != prevType
+            if (!(Type.DOT == type || Type.DOT == prevType ||
+                (in.length() > (i + 1) && Type.DOT == getCharType(in.charAt(i + 1))))
+                &&
+                (type != prevType
                     && (i - prevBoundary) > 0
                     && (Type.UPPER != prevType || Type.LOWER != type))
                     ||
