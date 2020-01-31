@@ -1,4 +1,4 @@
-(defproject fullcontact/camelsnake "0.9.2-SNAPSHOT"
+(defproject fullcontact/camelsnake "0.10.0-SNAPSHOT"
   :description "String and keyword transformation between cases."
   :url "https://github.com/fullcontact/camelsnake"
   :license {:name "Eclipse Public License - v 1.0"
@@ -6,7 +6,7 @@
             :distribution :repo}
   :deploy-repositories [["releases" {:url "https://clojars.org/repo/" :creds :gpg}]]
   :java-source-paths ["src"]
-  :dependencies [[org.clojure/clojure "1.7.0"]]
+  :dependencies [[org.clojure/clojure "1.10.1"]]
   :aot :all
   :release-tasks [["vcs" "assert-committed"]
                   ["change" "version" "leiningen.release/bump-version" "release"]
